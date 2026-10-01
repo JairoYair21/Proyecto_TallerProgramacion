@@ -1,0 +1,9 @@
+@keyframes entradaTitulo{
+    from{ opacity: 0; transform: translateY(18px); }
+    to{ opacity: 1; transform: translateY(0); }
+}
+
+.entrada-titulo{
+    animation: entradaTitulo .7s ease-out both;
+    animation-iteration-count: 1; /* corre una sola vez al cargar */
+}

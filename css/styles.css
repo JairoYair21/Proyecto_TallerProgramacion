@@ -1,0 +1,675 @@
+/* =========================================================
+   F1 HUB — hoja de estilos principal
+   Paleta: asfalto, blanco pista, rojo carrera, ámbar de bandera
+   ========================================================= */
+
+:root{
+  --asfalto: #121417;
+  --panel: #1b1e23;
+  --panel-alt: #22262c;
+  --linea: #2e3339;
+  --blanco-pista: #f5f6f8;
+  --gris-titanio: #9da3ae;
+  --rojo-carrera: #e8002d;
+  --rojo-carrera-oscuro: #b40021;
+  --ambar-bandera: #ffb100;
+  --verde-ok: #2ecc71;
+
+  --fuente-display: "Rajdhani", "Arial Narrow", sans-serif;
+  --fuente-texto: "Work Sans", Arial, sans-serif;
+
+  --radio: 10px;
+  --sombra: 0 10px 30px rgba(0,0,0,.35);
+}
+
+*{ box-sizing: border-box; }
+
+html{ scroll-behavior: smooth; }
+
+body{
+  margin: 0;
+  background: var(--asfalto);
+  color: var(--blanco-pista);
+  font-family: var(--fuente-texto);
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+
+a{ color: inherit; }
+
+img{ max-width: 100%; display: block; }
+
+h1, h2, h3, h4{
+  font-family: var(--fuente-display);
+  font-weight: 700;
+  letter-spacing: .01em;
+  margin: 0 0 .4em 0;
+  color: var(--blanco-pista);
+}
+
+h1{ font-size: clamp(2.2rem, 4.5vw, 3.4rem); line-height: 1.08; }
+.hero h1{ font-size: clamp(2.8rem, 6vw, 4.6rem); }
+h2{ font-size: clamp(1.8rem, 3.6vw, 2.6rem); }
+h3{ font-size: 1.3rem; }
+
+p{ margin: 0 0 1em 0; color: var(--gris-titanio); max-width: 62ch; }
+
+.contenedor{
+  width: min(1100px, 92%);
+  margin-inline: auto;
+}
+
+/* Foco visible para accesibilidad */
+a:focus-visible, button:focus-visible, input:focus-visible,
+textarea:focus-visible, select:focus-visible, [tabindex="0"]:focus-visible{
+  outline: 3px solid var(--ambar-bandera);
+  outline-offset: 2px;
+}
+
+/* Respeto de reduced motion */
+@media (prefers-reduced-motion: reduce){
+  *{ animation: none !important; transition: none !important; }
+  html{ scroll-behavior: auto; }
+}
+
+/* ---------------------------------------------------------
+   ENCABEZADO / NAVEGACIÓN
+   --------------------------------------------------------- */
+.cabecera{
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(18,20,23,.92);
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid var(--linea);
+}
+
+.barra-nav{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: .9rem 0;
+}
+
+.marca{
+  display: flex;
+  align-items: baseline;
+  gap: .4rem;
+  font-family: var(--fuente-display);
+  font-size: 1.4rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+.marca .marca-num{
+  color: var(--rojo-carrera);
+}
+
+.nav-links{
+  display: flex;
+  gap: 1.8rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links a{
+  text-decoration: none;
+  font-family: var(--fuente-display);
+  font-size: 1.02rem;
+  font-weight: 600;
+  color: var(--gris-titanio);
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: .4rem .2rem;
+  border-bottom: 2px solid transparent;
+  transition: color .15s, border-color .15s;
+}
+.nav-links a:hover,
+.nav-links a[aria-current="page"]{
+  color: var(--blanco-pista);
+  border-color: var(--rojo-carrera);
+}
+
+.nav-toggle{
+  display: none;
+  background: none;
+  border: 1px solid var(--linea);
+  color: var(--blanco-pista);
+  padding: .4rem .6rem;
+  border-radius: var(--radio);
+  min-height: 44px;
+  cursor: pointer;
+}
+
+@media (max-width: 720px){
+  .nav-toggle{ display: block; }
+  .nav-links{
+    position: absolute;
+    inset: 100% 0 auto 0;
+    background: var(--panel);
+    flex-direction: column;
+    padding: 1rem 6%;
+    gap: 1rem;
+    border-bottom: 1px solid var(--linea);
+    display: none;
+  }
+  .nav-links.abierto{ display: flex; }
+}
+
+/* ---------------------------------------------------------
+   DIVISOR TIPO BANDERA A CUADROS
+   Se usa como transición estructural entre secciones,
+   no como decoración repetida.
+   --------------------------------------------------------- */
+.divisor-bandera{
+  height: 10px;
+  background-image:
+    linear-gradient(45deg, var(--blanco-pista) 25%, transparent 25%),
+    linear-gradient(-45deg, var(--blanco-pista) 25%, transparent 25%),
+    linear-gradient(45deg, transparent 75%, var(--blanco-pista) 75%),
+    linear-gradient(-45deg, transparent 75%, var(--blanco-pista) 75%);
+  background-size: 20px 20px;
+  background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
+  background-color: var(--asfalto);
+  opacity: .9;
+}
+
+/* ---------------------------------------------------------
+   HERO (portada)
+   --------------------------------------------------------- */
+.hero{
+  padding: clamp(3rem, 7vw, 6rem) 0;
+  background:
+    linear-gradient(90deg, rgba(18,20,23,.96), rgba(18,20,23,.72)),
+    url("../img/imagen1.jpg") center / cover;
+}
+.hero p{ color: #d3d7de; }
+.hero .hero-etiqueta{ color: var(--ambar-bandera); }
+
+.hero-grid{
+  display: grid;
+  grid-template-columns: 1.3fr .9fr;
+  gap: 3rem;
+  align-items: end;
+}
+
+@media (max-width: 860px){
+  .hero-grid{ grid-template-columns: 1fr; }
+}
+
+.hero-etiqueta{
+  font-family: var(--fuente-display);
+  color: var(--ambar-bandera);
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: .6rem;
+}
+
+.hero-acciones{
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.4rem;
+  flex-wrap: wrap;
+}
+
+.boton{
+  display: inline-block;
+  font-family: var(--fuente-display);
+  font-weight: 700;
+  font-size: 1.05rem;
+  text-decoration: none;
+  padding: .75rem 1.5rem;
+  border-radius: var(--radio);
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: background-color .2s ease, border-color .2s ease, transform .2s ease;
+  min-height: 44px;
+  text-align: center;
+}
+.boton-primario{
+  background: var(--rojo-carrera);
+  color: var(--blanco-pista);
+}
+.boton-primario:hover{ background: var(--rojo-carrera-oscuro); }
+.boton-secundario{
+  background: transparent;
+  border-color: var(--linea);
+  color: var(--blanco-pista);
+}
+.boton-secundario:hover{ border-color: var(--gris-titanio); }
+
+/* Panel de "dato grande" en el hero, estilo tablero de telemetría */
+.panel-dato{
+  background: var(--panel);
+  border: 1px solid var(--linea);
+  border-radius: var(--radio);
+  padding: 1.6rem;
+  box-shadow: var(--sombra);
+}
+.panel-dato .dato-num{
+  font-family: var(--fuente-display);
+  font-size: 3.6rem;
+  font-weight: 700;
+  color: var(--rojo-carrera);
+  line-height: 1;
+}
+.panel-dato .dato-label{
+  color: var(--gris-titanio);
+  font-size: .95rem;
+  margin-top: .3rem;
+}
+.panel-dato hr{
+  border: none;
+  border-top: 1px solid var(--linea);
+  margin: 1rem 0;
+}
+.panel-dato ul{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: .5rem;
+  font-size: .95rem;
+}
+.panel-dato li{ display: flex; justify-content: space-between; }
+.panel-dato li span:first-child{ color: var(--gris-titanio); }
+
+/* ---------------------------------------------------------
+   SECCIONES GENERALES
+   --------------------------------------------------------- */
+.seccion{ padding: 3.5rem 0; }
+.seccion + .seccion{ border-top: 1px solid var(--linea); }
+.seccion-cabecera{
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.tarjetas-3{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+@media (max-width: 860px){ .tarjetas-3{ grid-template-columns: 1fr; } }
+
+.tarjeta{
+  background: var(--panel);
+  border: 1px solid var(--linea);
+  border-radius: var(--radio);
+  padding: 1.4rem;
+}
+.accesos-grid{
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1.2rem;
+}
+.acceso{
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  transition: border-color .25s ease, transform .25s ease, box-shadow .25s ease;
+}
+.acceso-enlace{ margin-top: auto; padding-top: .5rem; color: var(--blanco-pista); font-weight: 600; }
+@media (hover: hover) and (pointer: fine){
+  .acceso:hover{ transform: translateY(-4px); border-color: var(--rojo-carrera); box-shadow: var(--sombra); }
+  .boton:hover{ transform: translateY(-2px); }
+}
+.tarjeta h3{ margin-bottom: .3rem; }
+.tarjeta .tarjeta-num{
+  font-family: var(--fuente-display);
+  color: var(--rojo-carrera);
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: .5rem;
+}
+
+/* ---------------------------------------------------------
+   TABLAS (torre de tiempos)
+   --------------------------------------------------------- */
+.tabla-envoltorio{
+  overflow-x: auto;
+  border: 1px solid var(--linea);
+  border-radius: var(--radio);
+}
+
+table{
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 640px;
+  font-family: var(--fuente-texto);
+}
+
+caption{
+  text-align: left;
+  font-family: var(--fuente-display);
+  color: var(--gris-titanio);
+  padding: 1rem 1.2rem;
+  font-size: .95rem;
+}
+
+thead th{
+  background: var(--panel-alt);
+  color: var(--gris-titanio);
+  font-family: var(--fuente-display);
+  font-weight: 700;
+  text-align: left;
+  padding: .8rem 1.1rem;
+  font-size: .9rem;
+  border-bottom: 2px solid var(--rojo-carrera);
+  white-space: nowrap;
+}
+
+tbody td{
+  padding: .75rem 1.1rem;
+  border-bottom: 1px solid var(--linea);
+  font-size: .97rem;
+}
+
+tbody tr:hover{ background: var(--panel-alt); }
+
+tbody tr:last-child td{ border-bottom: none; }
+
+.pos{
+  font-family: var(--fuente-display);
+  font-weight: 700;
+  color: var(--blanco-pista);
+  font-size: 1.05rem;
+}
+
+.pos-1{ color: var(--ambar-bandera); }
+
+td.num, th.num{ text-align: right; font-variant-numeric: tabular-nums; }
+
+.chip{
+  display: inline-block;
+  padding: .15rem .55rem;
+  border-radius: 999px;
+  font-size: .78rem;
+  font-family: var(--fuente-display);
+  font-weight: 700;
+  background: var(--panel-alt);
+  border: 1px solid var(--linea);
+  color: var(--gris-titanio);
+}
+
+/* ---------------------------------------------------------
+   GALERÍA / MULTIMEDIA
+   --------------------------------------------------------- */
+.galeria-grid{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.2rem;
+}
+@media (max-width: 860px){ .galeria-grid{ grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 560px){ .galeria-grid{ grid-template-columns: 1fr; } }
+
+.galeria-item{
+  border: 1px solid var(--linea);
+  border-radius: var(--radio);
+  overflow: hidden;
+  background: var(--panel);
+}
+.galeria-item img{
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  height: auto;
+  object-fit: cover;
+  transition: transform .4s ease, filter .4s ease;
+}
+.galeria-imagen{ overflow: hidden; }
+@media (hover: hover) and (pointer: fine){
+  .galeria-item:hover img{
+    transform: scale(1.05);
+    filter: brightness(1.08);
+  }
+}
+.galeria-item figcaption{
+  padding: .7rem .9rem;
+  font-size: .9rem;
+  color: var(--gris-titanio);
+}
+.galeria-item{ margin: 0; }
+
+.video-envoltorio{
+  position: relative;
+  aspect-ratio: 16 / 9;
+  border-radius: var(--radio);
+  overflow: hidden;
+  border: 1px solid var(--linea);
+  background: #000;
+  max-width: 990px;
+  margin-inline: auto;
+}
+.video-envoltorio video{
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+  audio {
+    width: 100%;
+  }
+
+  /* ---------------------------------------------------------
+     FORMULARIO DE CONTACTO / INSCRIPCIÓN
+     --------------------------------------------------------- */
+
+  .form-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+    gap: 2.5rem;
+    align-items: start;
+  }
+
+  @media (max-width: 860px) {
+    .form-layout {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  form {
+    background: var(--panel);
+    border: 1px solid var(--linea);
+    border-radius: var(--radio);
+    padding: 1.8rem;
+    display: grid;
+    gap: 1.1rem;
+  }
+
+  .campo {
+    display: grid;
+    gap: .4rem;
+    min-width: 0;
+  }
+
+  label {
+    font-family: var(--fuente-display);
+    font-weight: 600;
+    font-size: .95rem;
+    color: var(--blanco-pista);
+  }
+
+  .campo .ayuda {
+    font-size: .82rem;
+    color: var(--gris-titanio);
+  }
+
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  input[type="date"],
+  select,
+  textarea {
+    background: var(--asfalto);
+    border: 1px solid var(--linea);
+    color: var(--blanco-pista);
+    padding: .7rem .8rem;
+    border-radius: var(--radio);
+    font-family: var(--fuente-texto);
+    font-size: 1rem;
+  }
+  input:not([type="checkbox"]):not([type="radio"]), select, textarea{ width: 100%; min-width: 0; }
+  input[type="checkbox"], input[type="radio"]{ accent-color: var(--rojo-carrera); }
+
+  textarea {
+    resize: vertical;
+    min-height: 110px;
+  }
+
+  fieldset {
+    border: 1px solid var(--linea);
+    border-radius: var(--radio);
+    padding: 1rem;
+    min-width: 0;
+  }
+  fieldset > .campo, fieldset > .campo-fila{ margin-bottom: 1.2rem; }
+  fieldset > :last-child{ margin-bottom: 0; }
+  .contacto-info{ display: grid; gap: 1rem; }
+  .contacto-info p{ margin-bottom: 0; overflow-wrap: anywhere; }
+  .form-estado{ margin: 0; color: var(--ambar-bandera); }
+
+  legend {
+    font-family: var(--fuente-display);
+    font-weight: 700;
+    padding: 0 .4rem;
+  }
+
+  .radio-grupo, .check-grupo {
+    display: grid;
+    gap: .5rem;
+    margin-top: .4rem;
+  }
+
+  .radio-grupo label, .check-grupo label {
+    font-family: var(--fuente-texto);
+    font-weight: 400;
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    color: var(--gris-titanio);
+  }
+
+  .campo-fila {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+
+  @media (max-width: 480px) {
+    .campo-fila {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .form-envio {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .nota-privacidad {
+    font-size: .8rem;
+    color: var(--gris-titanio);
+  }
+
+  /* ---------------------------------------------------------
+     PIE DE PÁGINA
+     --------------------------------------------------------- */
+
+  footer {
+    border-top: 1px solid var(--linea);
+    padding: 2.2rem 0;
+    margin-top: 2rem;
+  }
+
+  .pie-grid {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+    color: var(--gris-titanio);
+    font-size: .9rem;
+  }
+
+  .pie-grid a {
+    text-decoration: none;
+    color: var(--gris-titanio);
+  }
+
+  .pie-grid a:hover {
+    color: var(--blanco-pista);
+  }
+
+/* DESTACADOS: próxima carrera, pilotos y audio */
+.carrera-destacada{
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  gap: 2rem;
+  align-items: center;
+  padding: clamp(1.2rem, 3vw, 2rem);
+  background: linear-gradient(120deg, rgba(232,0,45,.12), transparent), var(--panel);
+  border: 1px solid var(--linea);
+  border-left: 4px solid var(--rojo-carrera);
+  border-radius: var(--radio);
+}
+.carrera-fecha{ display: grid; text-align: center; font-family: var(--fuente-display); line-height: 1.1; }
+.carrera-fecha strong{ font-size: 3.8rem; }
+.carrera-fecha span{ font-size: 1.1rem; color: var(--gris-titanio); }
+.carrera-destacada h2, .carrera-destacada h3{ font-size: clamp(1.5rem, 3vw, 2.2rem); margin-top: .4rem; }
+.tabla-calendario{ scroll-margin-top: 6rem; }
+.carrera-destacada p{ margin-bottom: 0; }
+.calendario-destacado{ margin-bottom: 2rem; }
+.chip-proxima{ background: rgba(255,177,0,.12); color: var(--ambar-bandera); border-color: var(--ambar-bandera); }
+.chip-finalizada{ color: #8ce3b2; border-color: #3c7855; }
+.carrera-proxima{ background: var(--panel-alt); }
+.nota-datos{ margin-top: 1rem; font-size: .85rem; }
+.podio-grid{ display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.2rem; margin-bottom: 2rem; }
+.piloto-destacado{ position: relative; overflow: hidden; border-top: 3px solid var(--equipo); }
+.equipo-mercedes{ --equipo: #67dbc6; }
+.equipo-ferrari{ --equipo: #ff6576; }
+.piloto-posicion{ display: block; font-family: var(--fuente-display); font-size: 2rem; color: var(--gris-titanio); margin-bottom: .8rem; }
+.piloto-destacado:first-child .piloto-posicion{ color: var(--ambar-bandera); }
+.piloto-destacado h2{ font-size: 1.6rem; }
+.piloto-equipo{ color: var(--equipo); }
+.piloto-puntos{ margin-bottom: 0; }
+.piloto-puntos strong{ font-family: var(--fuente-display); font-size: 2.5rem; color: var(--blanco-pista); }
+.tabla-pilotos td:last-child{ font-weight: 600; color: var(--blanco-pista); }
+.audio-tarjeta{ max-width: 990px; margin-inline: auto; }
+.audio-tarjeta audio{ margin-top: .5rem; }
+
+@media (max-width: 860px){
+  .accesos-grid{ grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .carrera-destacada{ grid-template-columns: auto minmax(0, 1fr); gap: 1.2rem; }
+  .carrera-destacada > .boton{ grid-column: 1 / -1; justify-self: start; }
+}
+@media (max-width: 560px){
+  .seccion{ padding: 2.2rem 0; }
+  .seccion-cabecera{ margin-bottom: 1.4rem; }
+  .accesos-grid, .podio-grid{ grid-template-columns: 1fr; }
+  .hero-grid{ gap: 2rem; }
+  .hero-acciones{ flex-direction: column; }
+  .panel-dato, form{ padding: 1.2rem; }
+  .pie-grid{ flex-direction: column; gap: 1rem; }
+  .pie-grid nav{ line-height: 2.2; }
+  /* Mantiene una sola tabla con toda la información en formato de tarjetas. */
+  .tabla-calendario{ border: 0; overflow: visible; }
+  .tabla-calendario table, .tabla-calendario tbody{ display: block; min-width: 0; }
+  .tabla-calendario caption{ display: block; padding: 0 0 1rem; }
+  .tabla-calendario thead{ position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); }
+  .tabla-calendario tbody tr{ display: grid; margin-bottom: 1rem; padding: .5rem 1rem; border: 1px solid var(--linea); border-radius: var(--radio); background: var(--panel); }
+  .tabla-calendario tbody tr.carrera-proxima{ border-color: var(--ambar-bandera); }
+  .tabla-calendario td{ display: grid; grid-template-columns: 5.5rem minmax(0, 1fr); gap: .7rem; padding: .65rem 0; overflow-wrap: anywhere; }
+  .tabla-calendario td::before{ content: attr(data-label); color: var(--gris-titanio); font-family: var(--fuente-texto); font-size: .85rem; font-weight: 400; }
+  .tabla-calendario td .chip{ justify-self: start; }
+}
+@media (prefers-reduced-motion: reduce){
+  .acceso:hover, .boton:hover, .galeria-item:hover img{ transform: none; }
+}

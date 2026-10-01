@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Galería — Paddock</title>
+<meta name="description" content="Galería multimedia de la temporada de Fórmula 1: imágenes, video y audio.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+
+<header class="cabecera">
+  <nav class="barra-nav contenedor" aria-label="Navegación principal">
+    <a href="index.html" class="marca">Paddock<span class="marca-num">F1</span></a>
+    <button class="nav-toggle" aria-expanded="false" aria-controls="menu-principal" id="botonMenu">Menú</button>
+    <ul class="nav-links" id="menu-principal">
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="pilotos.html">Pilotos</a></li>
+      <li><a href="calendario.html">Calendario</a></li>
+      <li><a href="galeria.html" aria-current="page">Galería</a></li>
+      <li><a href="contacto.html">Contacto</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+  <section class="seccion contenedor">
+    <div class="seccion-cabecera">
+      <div>
+        <h1>Galería multimedia</h1>
+        <p>Desde los boxes hasta el podio: descubre las imágenes y sonidos de la Fórmula 1.</p>
+      </div>
+    </div>
+
+    <div class="galeria-grid">
+      <figure class="galeria-item">
+        <div class="galeria-imagen"><img src="../img/imagen5.webp" alt="Vista aérea de un circuito de carreras con curvas y zona de boxes" loading="lazy"></div>
+        <figcaption>Circuito urbano, vista general de boxes y recta principal.</figcaption>
+      </figure>
+      <figure class="galeria-item">
+        <div class="galeria-imagen"><img src="../img/imagen6.jpg" alt="Curva de un circuito de carreras al atardecer" loading="lazy"></div>
+        <figcaption>Última curva antes de la recta de meta, sesión de tarde.</figcaption>
+      </figure>
+      <figure class="galeria-item">
+        <div class="galeria-imagen"><img src="../img/imagen2.jpg" alt="Zona de boxes de un equipo de carreras durante una parada" loading="lazy"></div>
+        <figcaption>Zona de boxes durante una parada en pits.</figcaption>
+      </figure>
+      <figure class="galeria-item">
+        <div class="galeria-imagen"><img src="../img/imagen3.webp" alt="Gradas llenas de público en un Gran Premio" loading="lazy"></div>
+        <figcaption>Gradas a plena capacidad en día de carrera.</figcaption>
+      </figure>
+      <figure class="galeria-item">
+        <div class="galeria-imagen"><img src="../img/imagen1.jpg" alt="Circuito iluminado durante una carrera nocturna" loading="lazy"></div>
+        <figcaption>Sesión nocturna bajo las luces del circuito.</figcaption>
+      </figure>
+      <figure class="galeria-item">
+        <div class="galeria-imagen"><img src="../img/imagen4.jpg" alt="Podio de premiación de un Gran Premio" loading="lazy"></div>
+        <figcaption>Ceremonia de podio al cierre de la carrera.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="seccion contenedor">
+    <div class="seccion-cabecera">
+      <div>
+        <h2>Video destacado</h2>
+      </div>
+    </div>
+
+    <div class="video-envoltorio">
+      <video controls preload="metadata" poster="../img/imagen1.jpg" aria-label="Presentación de Fórmula 1">
+        <source src="../video/PresentacionF1.mp4" type="video/mp4">
+      </video>
+    </div>
+  </section>
+
+  <section class="seccion contenedor">
+    <div class="seccion-cabecera">
+      <div>
+        <h2>Resumen en audio</h2>
+      </div>
+    </div>
+
+    <div class="tarjeta audio-tarjeta">
+      <h3>F1 para principiantes</h3>
+      <p>Una introducción en audio para empezar a conocer el mundo de la Fórmula 1.</p>
+      <audio controls preload="metadata" aria-label="Fórmula 1 para principiantes">
+        <source src="../audio/F1_para_principiantes.mp3" type="audio/mpeg">
+      </audio>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="contenedor pie-grid">
+    <span> Paddock F1 — Proyecto académico, temporada 2026.</span>
+    <nav aria-label="Enlaces del pie de página">
+      <a href="pilotos.html">Pilotos</a> ·
+      <a href="calendario.html">Calendario</a> ·
+      <a href="galeria.html">Galería</a> ·
+      <a href="contacto.html">Contacto</a>
+    </nav>
+  </div>
+</footer>
+
+<script src="../js/menu.js"></script>
+</body>
+</html>

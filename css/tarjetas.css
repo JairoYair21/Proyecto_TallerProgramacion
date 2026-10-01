@@ -1,0 +1,13 @@
+.tarjeta{
+    background: var(--panel);
+    border: 1px solid var(--linea);
+    border-radius: var(--radio);
+    padding: 1.4rem;
+    transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+}
+
+.tarjeta:hover{
+    transform: translateY(-6px) scale(1.02);
+    box-shadow: var(--sombra);
+    border-color: var(--rojo-carrera);
+}

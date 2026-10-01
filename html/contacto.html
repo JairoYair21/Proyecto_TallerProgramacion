@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contacto — Paddock F1</title>
+<meta name="description" content="Formulario de contacto e inscripción al boletín de F1 .">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+
+<header class="cabecera">
+  <nav class="barra-nav contenedor" aria-label="Navegación principal">
+    <a href="index.html" class="marca">Paddock<span class="marca-num">F1</span></a>
+    <button class="nav-toggle" aria-expanded="false" aria-controls="menu-principal" id="botonMenu">Menú</button>
+    <ul class="nav-links" id="menu-principal">
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="pilotos.html">Pilotos</a></li>
+      <li><a href="calendario.html">Calendario</a></li>
+      <li><a href="galeria.html">Galería</a></li>
+      <li><a href="contacto.html" aria-current="page">Contacto</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+  <section class="seccion contenedor">
+    <div class="seccion-cabecera">
+      <div>
+        <h1>Contacto</h1>
+        <p>Comparte tus preferencias y sugerencias con la comunidad Paddock F1.</p>
+      </div>
+    </div>
+
+    <div class="form-layout">
+
+      <form id="form-contacto" action="#" method="post" aria-describedby="aviso-formulario">
+        <p class="nota-privacidad" id="aviso-formulario">Formulario de demostración académica: los datos no se envían ni se guardan. Los campos marcados con * son obligatorios.</p>
+        <fieldset>
+          <legend>Datos de contacto</legend>
+
+          <div class="campo-fila">
+            <div class="campo">
+              <label for="nombre">Nombre *</label>
+              <input type="text" id="nombre" name="nombre" required autocomplete="given-name">
+            </div>
+            <div class="campo">
+              <label for="apellido">Apellido *</label>
+              <input type="text" id="apellido" name="apellido" required autocomplete="family-name">
+            </div>
+          </div>
+
+          <div class="campo">
+            <label for="correo">Correo electrónico *</label>
+            <input type="email" id="correo" name="correo" required autocomplete="email" placeholder="nombre@correo.com">
+          </div>
+
+          <div class="campo">
+            <label for="telefono">Teléfono <span class="ayuda">(opcional)</span></label>
+            <input type="tel" id="telefono" name="telefono" pattern="[0-9 +()-]{6,15}" placeholder="+51 000 000 000">
+          </div>
+
+          <div class="campo">
+            <label for="nacimiento">Fecha de nacimiento <span class="ayuda">(opcional)</span></label>
+            <input type="date" id="nacimiento" name="nacimiento">
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>Preferencias</legend>
+
+          <div class="campo">
+            <label for="equipo">Equipo favorito *</label>
+            <select id="equipo" name="equipo" required>
+              <option value="">Selecciona un equipo</option>
+              <option value="mercedes">Mercedes</option>
+              <option value="ferrari">Ferrari</option>
+              <option value="mclaren">McLaren</option>
+              <option value="redbull">Red Bull</option>
+              <option value="astonmartin">Aston Martin</option>
+              <option value="alpine">Alpine</option>
+              <option value="otro">Otro</option>
+            </select>
+          </div>
+
+          <div class="campo">
+            <span id="seguimiento-label">¿Cómo sigues las carreras habitualmente?</span>
+            <div class="radio-grupo" role="group" aria-labelledby="seguimiento-label">
+              <label><input type="radio" name="seguimiento" value="tv" checked> Transmisión de TV</label>
+              <label><input type="radio" name="seguimiento" value="streaming"> Servicio de streaming</label>
+              <label><input type="radio" name="seguimiento" value="resumenes"> Resúmenes y redes sociales</label>
+            </div>
+          </div>
+
+          <div class="campo">
+            <span id="intereses-label">Contenido que te interesa recibir</span>
+            <div class="check-grupo" role="group" aria-labelledby="intereses-label">
+              <label><input type="checkbox" name="intereses" value="clasificaciones"> Clasificaciones y resultados</label>
+              <label><input type="checkbox" name="intereses" value="calendario"> Recordatorios de calendario</label>
+              <label><input type="checkbox" name="intereses" value="multimedia"> Fotos y video de las carreras</label>
+            </div>
+          </div>
+        </fieldset>
+
+        <div class="campo">
+          <label for="mensaje">Mensaje <span class="ayuda">(opcional)</span></label>
+          <textarea id="mensaje" name="mensaje" placeholder="Cuéntanos qué te gustaría ver en Paddock F1"></textarea>
+        </div>
+
+        <div class="campo">
+          <label><input type="checkbox" name="terminos" required> Acepto recibir comunicaciones de Paddock F1 *</label>
+        </div>
+
+        <div class="form-envio">
+          <button type="submit" class="boton boton-primario" disabled>Probar formulario</button>
+        </div>
+        <p id="form-estado" class="form-estado" role="status" aria-live="polite"></p>
+        <noscript><p>Activa JavaScript para probar el formulario de demostración.</p></noscript>
+      </form>
+
+      <aside class="contacto-info">
+        <h2>Otros canales</h2>
+        <div class="tarjeta">
+          <h3>Correo de referencia</h3>
+          <p>contacto@f1hub.edu.pe</p>
+          <p class="nota-privacidad">Dirección de ejemplo para el proyecto académico.</p>
+        </div>
+
+        <div class="tarjeta">
+          <h3>Horario de atención</h3>
+          <p>Lunes a viernes, 9:00 a.m. a 6:00 p.m. (hora de Perú).</p>
+        </div>
+      </aside>
+
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="contenedor pie-grid">
+    <span>Paddock F1 — Proyecto académico, temporada 2026.</span>
+    <nav aria-label="Enlaces del pie de página">
+      <a href="pilotos.html">Pilotos</a> ·
+      <a href="calendario.html">Calendario</a> ·
+      <a href="galeria.html">Galería</a> ·
+      <a href="contacto.html">Contacto</a>
+    </nav>
+  </div>
+</footer>
+
+<script src="../js/menu.js"></script>
+<script src="../js/contacto.js"></script>
+</body>
+</html>

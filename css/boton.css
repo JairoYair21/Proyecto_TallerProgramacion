@@ -1,0 +1,27 @@
+.boton{
+    /* ...tus propiedades actuales de .boton no cambian... */
+    transition: background-color .2s ease, transform .15s ease, box-shadow .2s ease;
+}
+
+.boton-primario:hover{
+    background: var(--rojo-carrera-oscuro);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 18px rgba(232,0,45,.35);
+}
+
+.boton-secundario:hover{
+    border-color: var(--gris-titanio);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 18px rgba(0,0,0,.35);
+}
+
+.boton:active{
+    transform: translateY(0) scale(.96);
+    box-shadow: none;
+}
+
+.boton:focus-visible{
+    outline: 3px solid var(--ambar-bandera);
+    outline-offset: 2px;
+    box-shadow: 0 0 0 4px rgba(255,177,0,.25);
+}

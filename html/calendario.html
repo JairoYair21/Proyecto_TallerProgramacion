@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Calendario — Paddock F1</title>
+<meta name="description" content="Calendario de Grandes Premios de la temporada 2026 de Fórmula 1.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+
+<header class="cabecera">
+  <nav class="barra-nav contenedor" aria-label="Navegación principal">
+    <a href="index.html" class="marca">Paddock<span class="marca-num">F1</span></a>
+    <button class="nav-toggle" aria-expanded="false" aria-controls="menu-principal" id="botonMenu">Menú</button>
+    <ul class="nav-links" id="menu-principal">
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="pilotos.html">Pilotos</a></li>
+      <li><a href="calendario.html" aria-current="page">Calendario</a></li>
+      <li><a href="galeria.html">Galería</a></li>
+      <li><a href="contacto.html">Contacto</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+  <section class="seccion contenedor">
+    <div class="seccion-cabecera">
+      <div>
+        <h1>Calendario de Grandes Premios</h1>
+        <p>Carreras de la temporada actual, obtenidas de la API de Fórmula 1.</p>
+      </div>
+    </div>
+
+    <div class="carrera-destacada calendario-destacado">
+      <time class="carrera-fecha" datetime="2026-09-13"><strong>13</strong><span>SEP · 2026</span></time>
+      <div>
+        <span class="chip chip-proxima">Ronda 14 · Próxima en este resumen</span>
+        <h2>Gran Premio de España</h2>
+        <p>Circuito Urbano de Madrid · España</p>
+      </div>
+      <a href="#carreras" class="boton boton-secundario">Ver carreras</a>
+    </div>
+
+    <div class="tabla-envoltorio tabla-calendario" id="carreras" tabindex="0" role="region" aria-label="Carreras seleccionadas">
+      <table role="table">
+        <caption>Selección de carreras — temporada 2026</caption>
+        <thead>
+          <tr>
+            <th scope="col">Ronda</th>
+            <th scope="col">Gran Premio</th>
+            <th scope="col">Circuito</th>
+            <th scope="col">País</th>
+            <th scope="col">Fecha</th>
+            <th scope="col">Estado</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="pos" data-label="Ronda">11</td>
+            <td data-label="Gran Premio">Gran Premio de los Países Bajos</td>
+            <td data-label="Circuito">Circuito de Zandvoort</td>
+            <td data-label="País">Países Bajos</td>
+            <td data-label="Fecha">23 de agosto de 2026</td>
+            <td data-label="Estado"><span class="chip chip-finalizada">Finalizada</span></td>
+          </tr>
+          <tr>
+            <td class="pos" data-label="Ronda">12</td>
+            <td data-label="Gran Premio">Gran Premio de Bélgica</td>
+            <td data-label="Circuito">Circuito de Spa-Francorchamps</td>
+            <td data-label="País">Bélgica</td>
+            <td data-label="Fecha">30 de agosto de 2026</td>
+            <td data-label="Estado"><span class="chip chip-finalizada">Finalizada</span></td>
+          </tr>
+          <tr>
+            <td class="pos" data-label="Ronda">13</td>
+            <td data-label="Gran Premio">Gran Premio de Italia</td>
+            <td data-label="Circuito">Autódromo Nazionale di Monza</td>
+            <td data-label="País">Italia</td>
+            <td data-label="Fecha">6 de septiembre de 2026</td>
+            <td data-label="Estado"><span class="chip chip-finalizada">Finalizada</span></td>
+          </tr>
+          <tr class="carrera-proxima">
+            <td class="pos pos-1" data-label="Ronda">14</td>
+            <td data-label="Gran Premio">Gran Premio de España</td>
+            <td data-label="Circuito">Circuito Urbano de Madrid</td>
+            <td data-label="País">España</td>
+            <td data-label="Fecha">13 de septiembre de 2026</td>
+            <td data-label="Estado"><span class="chip chip-proxima">Próxima</span></td>
+          </tr>
+          <tr>
+            <td class="pos" data-label="Ronda">15</td>
+            <td data-label="Gran Premio">Gran Premio de Azerbaiyán</td>
+            <td data-label="Circuito">Circuito Urbano de Bakú</td>
+            <td data-label="País">Azerbaiyán</td>
+            <td data-label="Fecha">27 de septiembre de 2026</td>
+            <td data-label="Estado"><span class="chip">Pendiente</span></td>
+          </tr>
+          <tr>
+            <td class="pos" data-label="Ronda">16</td>
+            <td data-label="Gran Premio">Gran Premio de Singapur</td>
+            <td data-label="Circuito">Circuito Urbano de Marina Bay</td>
+            <td data-label="País">Singapur</td>
+            <td data-label="Fecha">11 de octubre de 2026</td>
+            <td data-label="Estado"><span class="chip">Pendiente</span></td>
+          </tr>
+          <tr>
+            <td class="pos" data-label="Ronda">17</td>
+            <td data-label="Gran Premio">Gran Premio de Estados Unidos</td>
+            <td data-label="Circuito">Circuito de las Américas</td>
+            <td data-label="País">Estados Unidos</td>
+            <td data-label="Fecha">25 de octubre de 2026</td>
+            <td data-label="Estado"><span class="chip">Pendiente</span></td>
+          </tr>
+          <tr>
+            <td class="pos" data-label="Ronda">18</td>
+            <td data-label="Gran Premio">Gran Premio de la Ciudad de México</td>
+            <td data-label="Circuito">Autódromo Hermanos Rodríguez</td>
+            <td data-label="País">México</td>
+            <td data-label="Fecha">1 de noviembre de 2026</td>
+            <td data-label="Estado"><span class="chip">Pendiente</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p class="nota-datos">
+      Datos de referencia del proyecto académico. Esta selección conserva las fechas y los estados del resumen tras Monza; no se actualiza en tiempo real.
+    </p>
+  </section>
+</main>
+
+<footer>
+  <div class="contenedor pie-grid">
+    <span>Paddock F1 — Proyecto académico, temporada 2026.</span>
+    <nav aria-label="Enlaces del pie de página">
+      <a href="pilotos.html">Pilotos</a> ·
+      <a href="calendario.html">Calendario</a> ·
+      <a href="galeria.html">Galería</a> ·
+      <a href="contacto.html">Contacto</a>
+    </nav>
+  </div>
+</footer>
+
+<script src="../js/menu.js"></script>
+<script src="../js/calendario.js"></script>
+</body>
+</html>

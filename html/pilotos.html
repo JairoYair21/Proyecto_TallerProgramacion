@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pilotos — Paddock F1</title>
+<meta name="description" content="Clasificación de pilotos de la temporada 2026 de Fórmula 1.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+
+<header class="cabecera">
+  <nav class="barra-nav contenedor" aria-label="Navegación principal">
+    <a href="index.html" class="marca">Paddock<span class="marca-num">F1</span></a>
+    <button class="nav-toggle" aria-expanded="false" aria-controls="menu-principal" id="botonMenu">Menú</button>
+    <ul class="nav-links" id="menu-principal">
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="pilotos.html" aria-current="page">Pilotos</a></li>
+      <li><a href="calendario.html">Calendario</a></li>
+      <li><a href="galeria.html">Galería</a></li>
+      <li><a href="contacto.html">Contacto</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+  <section class="seccion contenedor">
+    <div class="seccion-cabecera">
+      <div>
+        <h1>Clasificación de pilotos</h1>
+        <p>Posiciones del campeonato mundial de pilotos tras el Gran Premio de Italia (Monza), ronda 13 de 24
+          de la temporada 2026. Resumen de referencia para este proyecto académico.</p>
+      </div>
+    </div>
+
+    <div class="podio-grid" aria-label="Tres primeros pilotos del resumen">
+      <article class="tarjeta piloto-destacado equipo-mercedes">
+        <span class="piloto-posicion">01 · Líder</span>
+        <h2>Andrea Kimi Antonelli</h2>
+        <p class="piloto-equipo">Mercedes</p>
+        <p class="piloto-puntos"><strong>267</strong> puntos · 7 victorias</p>
+      </article>
+      <article class="tarjeta piloto-destacado equipo-mercedes">
+        <span class="piloto-posicion">02</span>
+        <h2>George Russell</h2>
+        <p class="piloto-equipo">Mercedes</p>
+        <p class="piloto-puntos"><strong>201</strong> puntos · 3 victorias</p>
+      </article>
+      <article class="tarjeta piloto-destacado equipo-ferrari">
+        <span class="piloto-posicion">03</span>
+        <h2>Lewis Hamilton</h2>
+        <p class="piloto-equipo">Ferrari</p>
+        <p class="piloto-puntos"><strong>191</strong> puntos · 2 victorias</p>
+      </article>
+    </div>
+
+    <div class="tabla-envoltorio tabla-pilotos" tabindex="0" role="region" aria-label="Clasificación de pilotos; desplázate horizontalmente para ver todas las columnas">
+      <table>
+        <caption>Campeonato mundial de pilotos — actualizado tras Monza</caption>
+        <thead>
+          <tr>
+            <th scope="col">Pos.</th>
+            <th scope="col">Piloto</th>
+            <th scope="col">Equipo</th>
+            <th scope="col" class="num">Victorias</th>
+            <th scope="col" class="num">Puntos</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="pos pos-1">1</td>
+            <td>Andrea Kimi Antonelli</td>
+            <td>Mercedes</td>
+            <td class="num">7</td>
+            <td class="num">267</td>
+          </tr>
+          <tr>
+            <td class="pos">2</td>
+            <td>George Russell</td>
+            <td>Mercedes</td>
+            <td class="num">3</td>
+            <td class="num">201</td>
+          </tr>
+          <tr>
+            <td class="pos">3</td>
+            <td>Lewis Hamilton</td>
+            <td>Ferrari</td>
+            <td class="num">2</td>
+            <td class="num">191</td>
+          </tr>
+          <tr>
+            <td class="pos">4</td>
+            <td>Charles Leclerc</td>
+            <td>Ferrari</td>
+            <td class="num">1</td>
+            <td class="num">178</td>
+          </tr>
+          <tr>
+            <td class="pos">5</td>
+            <td>Lando Norris</td>
+            <td>McLaren</td>
+            <td class="num">2</td>
+            <td class="num">165</td>
+          </tr>
+          <tr>
+            <td class="pos">6</td>
+            <td>Oscar Piastri</td>
+            <td>McLaren</td>
+            <td class="num">1</td>
+            <td class="num">152</td>
+          </tr>
+          <tr>
+            <td class="pos">7</td>
+            <td>Max Verstappen</td>
+            <td>Red Bull</td>
+            <td class="num">1</td>
+            <td class="num">134</td>
+          </tr>
+          <tr>
+            <td class="pos">8</td>
+            <td>Pierre Gasly</td>
+            <td>Alpine</td>
+            <td class="num">0</td>
+            <td class="num">61</td>
+          </tr>
+          <tr>
+            <td class="pos">9</td>
+            <td>Isack Hadjar</td>
+            <td>Racing Bulls</td>
+            <td class="num">0</td>
+            <td class="num">48</td>
+          </tr>
+          <tr>
+            <td class="pos">10</td>
+            <td>Fernando Alonso</td>
+            <td>Aston Martin</td>
+            <td class="num">0</td>
+            <td class="num">39</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p class="nota-datos">
+      Datos de referencia con fines académicos, tomados de fuentes públicas de la temporada 2026.
+      <span class="chip">Fuente: prensa especializada de F1</span>
+    </p>
+  </section>
+
+  <section class="seccion contenedor">
+    <div class="seccion-cabecera">
+      <div>
+        <h2>Campeonato de constructores</h2>
+        <p>Resumen de los primeros cinco equipos en la clasificación de constructores.</p>
+      </div>
+    </div>
+
+    <div class="tabla-envoltorio" tabindex="0" role="region" aria-label="Clasificación de constructores; desplázate horizontalmente para ver todas las columnas">
+      <table>
+        <caption>Campeonato mundial de constructores</caption>
+        <thead>
+          <tr>
+            <th scope="col">Pos.</th>
+            <th scope="col">Equipo</th>
+            <th scope="col">Motor</th>
+            <th scope="col" class="num">Puntos</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="pos pos-1">1</td>
+            <td>Mercedes</td>
+            <td>Mercedes</td>
+            <td class="num">468</td>
+          </tr>
+          <tr>
+            <td class="pos">2</td>
+            <td>Ferrari</td>
+            <td>Ferrari</td>
+            <td class="num">381</td>
+          </tr>
+          <tr>
+            <td class="pos">3</td>
+            <td>McLaren</td>
+            <td>Mercedes</td>
+            <td class="num">265</td>
+          </tr>
+          <tr>
+            <td class="pos">4</td>
+            <td>Red Bull</td>
+            <td>Red Bull</td>
+            <td class="num">189</td>
+          </tr>
+          <tr>
+            <td class="pos">5</td>
+            <td>Racing Bulls</td>
+            <td>Red Bull</td>
+            <td class="num">83</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="contenedor pie-grid">
+    <span>Paddock F1 — Proyecto académico, temporada 2026.</span>
+    <nav aria-label="Enlaces del pie de página">
+      <a href="pilotos.html">Pilotos</a> ·
+      <a href="calendario.html">Calendario</a> ·
+      <a href="galeria.html">Galería</a> ·
+      <a href="contacto.html">Contacto</a>
+    </nav>
+  </div>
+</footer>
+
+<script src="../js/menu.js"></script>
+<script src="../js/pilotos.js"></script>
+</body>
+</html>
